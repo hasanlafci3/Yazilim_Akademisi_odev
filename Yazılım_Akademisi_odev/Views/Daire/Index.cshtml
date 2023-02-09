@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Daire>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container d-flex justify-content-center"
+
+<div class="container p-3">  @*p-3 orjinali*@
+    <div class="row pt-3">
+        <div class="col-3">
+            <h2 class="text-primary">Daire Listesi</h2>
+        </div>
+        
+        <div class="col-13 text-end">
+            <a asp-controller="Daire" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp;Yeni Daire Ekle
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<table class="table table-striped" >
+    <thead>
+        <tr>            
+            <th scope="col" style="text-align: center">Daire No</th>
+            <th scope="col" style="text-align: center">Blok</th>
+            <th scope="col" style="text-align: center">Kullanım Durumu</th>
+            <th scope="col" style="text-align: center">Tip</th>
+            <th scope="col" style="text-align: center">Kat</th>
+            <th scope="col" style="text-align: center">Oturan</th>
+            <th scope="col" style="text-align: center">İsim Soyisim</th>
+            <th scope="col" style="text-align: center">TC</th>
+            <th scope="col" style="text-align: center">Email</th>
+            <th scope="col" style="text-align: center">Phone</th>
+            <th scope="col" style="text-align: center">Arac</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td align="center">
+                    @obj.Daire_no
+                </td>
+                <td  align="center">
+                    @obj.Block
+                </td>
+                <td align="center">
+                    @obj.Durumu
+                </td>
+                <td  align="center">
+                    @obj.Tip
+                </td>
+                <td align="center">
+                    @obj.Kat
+                </td>
+                <td  align="center">
+                    @obj.Oturan
+                </td>
+                <td  align="center">
+                    @obj.Name
+                </td>
+                <td  align="center">
+                    @obj.Tc
+                </td>
+                <td  align="center">
+                    @obj.Email
+                </td>
+                <td  align="center">
+                    @obj.Phone
+                </td>
+                <td align="center">
+                    @obj.Arac
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Daire" asp-action="Edit" asp-route-id="@obj.Id"
+                       class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <a asp-controller="Daire" asp-action="Delete" asp-route-id="@obj.Id"
+                       class="btn btn-primary mx-2"><i class="bi bi-trash"></i>Delete</a>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>

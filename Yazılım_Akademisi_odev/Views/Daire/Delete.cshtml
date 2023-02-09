@@ -1,0 +1,84 @@
+﻿@model Daire 
+
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Daire Sil</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Daire_no"></label>
+            <input asp-for="Daire_no" class="form-control" />
+            <span asp-validation-for="Daire_no" class="text-danger" ></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Block"></label>
+            <input asp-for="Block" class="form-control" />
+            <span asp-validation-for="Block" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Durumu"></label>
+            <input asp-for="Durumu" class="form-control" />
+            <span asp-validation-for="Durumu" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Tip"></label>
+            <input asp-for="Tip" class="form-control" />
+            <span asp-validation-for="Tip" class="text-danger"></span>
+        </div>        
+        <div class="mb-3">
+            <label asp-for="Kat"></label>
+            <input asp-for="Kat" class="form-control" />
+            <span asp-validation-for="Kat" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Oturan"></label>
+            <input asp-for="Oturan" class="form-control" />
+            <span asp-validation-for="Oturan" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Tc"></label>
+            <input asp-for="Tc" class="form-control" />
+            <span asp-validation-for="Tc" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Arac"></label>
+            <input asp-for="Arac" class="form-control" />
+            <span asp-validation-for="Arac" class="text-danger"></span>
+        </div>
+       <button type="submit" class="btn-primary" style="width:150px">Sil</button>
+       
+       <a asp-controller="Daire" asp-action="Index" class="btn-primary" style="width:150px">
+            Geri Dön
+       </a>
+    </div>
+</form>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+@*@section Scripts{
+    @{
+        <partial name=="_ValidationScriptsPartial"/>
+    }
+}*@
